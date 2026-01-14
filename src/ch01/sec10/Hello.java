@@ -7,6 +7,6 @@ public class Hello {
         System.out.println("Hello, World! 박도흠 하하");
 
         PrintStream ps = System.out;
-        ps.println("Hello, WOrld! 크크");
+        ps.println("Hello, World! 크크");
     }
 }
