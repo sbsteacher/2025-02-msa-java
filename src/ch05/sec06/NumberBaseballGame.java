@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class NumberBaseballGame {
     public static void main(String[] args) {
-        System.out.println("args[0]: " + args[0]);
+        //System.out.println("args[0]: " + args[0]);
         //어떤 숫자가 역할을 하면 매직넘버라고 부르며 보통 상수/변수로 관리한다.
-        final int COUNT = 4; //자바에서 상수 만드는 방법 (final 붙이면 된다.)
+        final int COUNT = args.length == 1 ? Integer.parseInt(args[0]) : 3; //자바에서 상수 만드는 방법 (final 붙이면 된다.)
+        System.out.printf("------ 숫자 야구 게임 (%d) ------\n", COUNT);
         Scanner scanner = new Scanner(System.in);
 
         //맞춰야되는 숫자들
