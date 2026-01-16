@@ -27,7 +27,9 @@ public class NumberBaseballGame {
         }
         //System.out.println(Arrays.toString(questions));
 
+        int tryCount = 0;
         while(true) {
+            tryCount++;
             //숫자 3개를 입력받는다.
             System.out.print("answer >> ");
             String answer = scanner.nextLine();
@@ -59,7 +61,7 @@ public class NumberBaseballGame {
             //while문을 빠져나가야 하는 조건
             if(s == COUNT) { break; }
         }
-        System.out.println("-- 끝 --");
+        System.out.printf("-- 끝, 시도횟수: %d회 --", tryCount);
     }
 
 }
