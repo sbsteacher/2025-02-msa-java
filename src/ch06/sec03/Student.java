@@ -23,9 +23,19 @@ public class Student {
     String name;
 
     public Student() { //기본 생성자 정의
-        no = 0;
-        name = "홍길동";
-        System.out.println("--Student 기본생성자--");
+        this(0, "홍길동"); //this() 다른 생성자 호출, 항상 최상위에서 호출해야한다.
+        System.out.println("--Student 기본 생성자--");
+//        this.no = 0;
+//        this.name = "홍길동";
+    }
+    public Student(int no, String name) { // 오버로딩 생성자
+        System.out.println("--Student 오버로딩 생성자--");
+        this.no = no;
+        this.name = name;
+    }
+    public Student(String bbbb, int aaa) { // 오버로딩 생성자
+        this.no = aaa;
+        this.name = bbbb;
     }
 
     void introduceMySelf() {

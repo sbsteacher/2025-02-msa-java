@@ -16,18 +16,22 @@ public class StudentMain {
         //객체 생성때만 호출할 수 있고 생성 이후에는 호출할 수 없는 메소드이다.
         //객체 생성할 때는 무조건 생성자를 호출해야 합니다.
         //생성자를 정의하지 않으면 컴파일러가 기본 생성자는 자동으로 만들어 준다.
-        Student s1 = new Student();
+        Student s1 = new Student(100, "김예림");
         s1.introduceMySelf();
         s1.no = 1;
         s1.name = "권수영";
         s1.introduceMySelf();
 
         Student s2 = new Student();
+        s2.introduceMySelf();
         s2.no = 12;
         s2.name = "임준이";
         s2.introduceMySelf();
 
+        Student s3 = s1;
+
         s1.introduceMySelf();
         s2.introduceMySelf();
+        s3.introduceMySelf();
     }
 }
