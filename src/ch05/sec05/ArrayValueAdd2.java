@@ -14,16 +14,16 @@ public class ArrayValueAdd2 {
 
         arr2[idx] = value;
         //방법(1)
-        for(int i=0; i<idx; i++) {
-            arr2[i] = arr[i];
-        }
-        for(int i=idx; i<arr.length; i++) {
-            arr2[i + 1] = arr[i];
-        }
-        //방법(2)
-//        for(int i=0; i<arr.length; i++) {
-//            arr2[i < idx ? i : i + 1] = arr[i];
+//        for(int i=0; i<idx; i++) {
+//            arr2[i] = arr[i];
 //        }
+//        for(int i=idx; i<arr.length; i++) {
+//            arr2[i + 1] = arr[i];
+//        }
+        //방법(2)
+        for(int i=0; i<arr.length; i++) {
+            arr2[i < idx ? i : i + 1] = arr[i];
+        }
 
         System.out.println(Arrays.toString(arr2));
     }
