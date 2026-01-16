@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class NumberBaseballGame {
     public static void main(String[] args) {
-        final int COUNT = 3; //자바에서 상수 만드는 방법 (final 붙이면 된다.)
+        System.out.println("args[0]: " + args[0]);
+        //어떤 숫자가 역할을 하면 매직넘버라고 부르며 보통 상수/변수로 관리한다.
+        final int COUNT = 4; //자바에서 상수 만드는 방법 (final 붙이면 된다.)
         Scanner scanner = new Scanner(System.in);
 
         //맞춰야되는 숫자들
@@ -22,34 +24,41 @@ public class NumberBaseballGame {
                 }
             }
         }
-        System.out.println(Arrays.toString(questions));
-        //숫자 3개를 입력받는다.
-        System.out.print("answer >> ");
-        String answer = scanner.nextLine();
-        //System.out.println(answer);
+        //System.out.println(Arrays.toString(questions));
 
-        //answer 문자열을 이용하여 " " 기준으로 값들을 쪼개서 배열로 만들고 싶다.
-        String[] strAnswers = answer.split(" ");
+        while(true) {
+            //숫자 3개를 입력받는다.
+            System.out.print("answer >> ");
+            String answer = scanner.nextLine();
+            //System.out.println(answer);
 
-        int[] answers = new int[strAnswers.length];
-        for(int i=0; i< strAnswers.length; i++) {
-            answers[i] = Integer.parseInt(strAnswers[i]);
-        }
-        //System.out.println(Arrays.toString(answers));
+            //answer 문자열을 이용하여 " " 기준으로 값들을 쪼개서 배열로 만들고 싶다.
+            String[] strAnswers = answer.split(" ");
 
-        int s = 0, b = 0;
-        for(int i=0; i<questions.length; i++) {
-            for(int k=0; k<answers.length; k++) {
-                if(questions[i] == answers[k]) {
-                    if(i == k) {
-                        s++;
-                    } else {
-                        b++;
+            int[] answers = new int[strAnswers.length];
+            for(int i=0; i< strAnswers.length; i++) {
+                answers[i] = Integer.parseInt(strAnswers[i]);
+            }
+            //System.out.println(Arrays.toString(answers));
+
+            int s = 0, b = 0;
+            for(int i=0; i<questions.length; i++) {
+                for(int k=0; k<answers.length; k++) {
+                    if(questions[i] == answers[k]) {
+                        if(i == k) {
+                            s++;
+                        } else {
+                            b++;
+                        }
                     }
                 }
             }
+            System.out.printf("S: %d, B: %d, O: %d\n", s, b, (COUNT - (s + b)));
+
+            //while문을 빠져나가야 하는 조건
+            if(s == COUNT) { break; }
         }
-        System.out.printf("S: %d, B: %d, O: %d\n", s, b, (COUNT - (s + b)));
+        System.out.println("-- 끝 --");
     }
 
 }
