@@ -26,5 +26,8 @@ public class BlackJackMain {
         }
 
         dealer.needMoreCard();
+
+        //카드 받는게 종료.
+        Rule.whoIsWinner(dealer, gamer); //비겼다, 딜러 승, 게이머 승
     }
 }
