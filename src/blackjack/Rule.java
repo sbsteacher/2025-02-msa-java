@@ -27,7 +27,7 @@ public class Rule {
 
         if(dealerScore == gamerScore || dealerScore > BLACKJACK_SCORE && gamerScore > BLACKJACK_SCORE) {
             System.out.println("무승부");
-        } else if(dealerScore > BLACKJACK_SCORE || gamerScore <= BLACKJACK_SCORE && dealerScore <= BLACKJACK_SCORE && gamerScore > dealerScore) {
+        } else if(dealerScore > BLACKJACK_SCORE || gamerScore <= BLACKJACK_SCORE && gamerScore > dealerScore) {
             System.out.println("게이머 승");
         } else {
             System.out.println("딜러 승");
