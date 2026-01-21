@@ -60,7 +60,7 @@ public class CardDeck {
     }
 
     public Card draw() {
-        if(drawIdx > 51) { return null; } //예외 처리, 안전 장치
+        if(drawIdx >= cards.length) { return null; } //예외 처리, 안전 장치
         //cards의 방에 들어있는 card주소값을 순차적으로 리턴해주며 리턴한 방은 null로 바꾼다.
         Card temp = cards[drawIdx];
         cards[drawIdx++] = null;
