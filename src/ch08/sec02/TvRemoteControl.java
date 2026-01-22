@@ -5,6 +5,8 @@ package ch08.sec02;
 */
 public class TvRemoteControl implements RemoteControl {
     private int volume = MIN_VOLUME;
+    private int memoryVolume;
+    private boolean mute;
 
     //MAX_VOUMNE 초과는 되지 않도록 해주세요.
     @Override
@@ -24,6 +26,19 @@ public class TvRemoteControl implements RemoteControl {
     public void volumeDown() {
         if(volume > MIN_VOLUME) {
             volume--;
+        }
+        displayVolume();
+    }
+
+    @Override
+    public void mute() {
+        mute = !mute;
+        if(mute) {
+            memoryVolume = volume;
+            volume = 0;
+            System.out.print("(음소거) ");
+        } else {
+            volume = memoryVolume;
         }
         displayVolume();
     }
