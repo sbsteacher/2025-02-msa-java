@@ -27,15 +27,17 @@ public class GameStart {
             String answer = scanner.next();
             if("n".equalsIgnoreCase(answer)) {
                 break;
-            } else if("y".equalsIgnoreCase(answer)) {
-                gamer.receiveCard(cd.draw());
+            } else if(!"y".equalsIgnoreCase(answer)) {
+                continue;
             }
+            gamer.receiveCard(cd.draw());
+
+
         }
 
         //비교, 누가 이겼습니까?
         dealer.showYourCards();
 
         Rule.whoIsWinner(dealer, gamer);
-
     }
 }
