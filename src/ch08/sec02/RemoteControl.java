@@ -12,4 +12,5 @@ public interface RemoteControl {
     void volumeUp();
     void volumeDown();
     void mute(); //음소거
+
 }
