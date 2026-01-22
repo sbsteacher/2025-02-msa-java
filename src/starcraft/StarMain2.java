@@ -51,7 +51,7 @@ public class StarMain2 {
         dropship.check();
 
         System.out.println("-----------");
-        Unit u4 = dropship.unload2(5);
+        Unit u4 = dropship.unload2(1);
         System.out.println("u4: " + u4);
         dropship.check();
     }
