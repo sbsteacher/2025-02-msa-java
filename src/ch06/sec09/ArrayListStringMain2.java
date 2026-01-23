@@ -5,7 +5,7 @@ public class ArrayListStringMain2 {
         ArrayListString list = new ArrayListString();
         list.add("하하");
         list.add("후후");
-        list.add("크크");
+
         System.out.println(list); //[하하, 후후, 크크]
     }
 }
