@@ -62,4 +62,14 @@ public class ArrayListString {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        if(arr.length == 0) { return "[]"; }
+        String temp = arr[0];
+        for(int i=1; i<arr.length; i++) {
+            temp += ", " + arr[i];
+        }
+        return "[" + temp + "]";
+    }
 }
