@@ -17,6 +17,7 @@ public class Main {
         c2.calculate(10, 20);
 
         //3. 람다식을 이용한다. (일회용) 2번과 같은데 적게 작성한다.
+        //람다식 사용할 수 있는 조건! 인터페이스가 추상메소드가 단 1개만 있을때만 가능
         Calculable c3 = (x, y) -> System.out.println(x * y);
         c3.calculate(10, 20);
     }
