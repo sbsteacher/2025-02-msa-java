@@ -1,4 +1,4 @@
-package control.legacy;
+package control.ioc;
 
 import control.MartenWoofer;
 import control.Speaker;
@@ -8,9 +8,8 @@ public class HarmanSpeaker implements Speaker {
 
     private Woofer woofer; //Woofer를 implements한 객체 주소값 가질 수 있다.
 
-    //기본 생성자 명시 >>
-    public HarmanSpeaker() {
-        woofer = new MartenWoofer();
+    public HarmanSpeaker(Woofer woofer) {
+        this.woofer = woofer;
     }
 
     @Override
